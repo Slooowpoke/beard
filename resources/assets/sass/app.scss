@@ -1,0 +1,48 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+html{
+    background-color: #101010;
+
+	background: -webkit-radial-gradient(rgba(12, 0, 19, 0.85), rgb(12, 0, 19)); /* For Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(rgba(12, 0, 19, 0.85), rgb(12, 0, 19)); /* For Opera 11.1 to 12.0 */
+    background: -moz-radial-gradient(rgba(12, 0, 19, 0.85), rgb(12, 0, 19)); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(rgba(12, 0, 19, 0.85), rgb(12, 0, 19)); /* Standard syntax */
+}
+
+body{
+	background-color:transparent;
+
+	p{
+		font-family: 'Open Sans', sans-serif;
+		color:#ddd;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4{
+		font-family: 'Rye', sans-serif;
+		color: #ddd;
+	}
+
+	section{
+		margin-top:30px;
+		margin-bottom: 30px;
+	}
+
+	.title{
+		margin-top:10%;
+		margin-bottom:10%;
+	}
+
+
+
+}
