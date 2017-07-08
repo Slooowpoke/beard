@@ -82,7 +82,8 @@ class RecordController extends Controller
     public function show(Request $request)
     {
 		$record = Record::find($request->id);
-		return view('records.show', compact('record'));
+		$total = Record::all()->count();
+		return view('records.show', compact('record','total'));
     }
 
 	public function get(Request $request){
