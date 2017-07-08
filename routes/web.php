@@ -11,6 +11,10 @@
 |
 */
 
+Route::post('/show', 'RecordController@get')->name('showRecord');
+Route::get('/show/{id}', 'RecordController@show')->name('showRecord');
+
+
 Route::post('save', 'RecordController@store');
 Route::post('{id}/upvote', 'RecordController@upvote');
 Route::post('{id}/downvote', 'RecordController@downvote');
