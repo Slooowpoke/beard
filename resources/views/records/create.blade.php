@@ -167,20 +167,31 @@
 
 	// Get the position of a touch relative to the canvas
 	function getTouchPos(canvasDom, touchEvent) {
-		var rect = canvasDom.getBoundingClientRect();
+		touchEvent.preventDefault();
+		var rect = canvas.getBoundingClientRect();
 			return {
+
 				x: touchEvent.touches[0].clientX - rect.left,
 				y: touchEvent.touches[0].clientY - rect.top
 		};
 	}
 	// Get the position of the mouse relative to the canvas
 	function getMousePos(canvasDom, mouseEvent) {
-		var rect = canvasDom.getBoundingClientRect();
+		mouseEvent.preventDefault();
+		var rect = canvas.getBoundingClientRect();
 			return {
-				x: mouseEvent.clientX - rect.left,
-				y: mouseEvent.clientY - rect.top
+				x: (mouseEvent.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
+        		y: (mouseEvent.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
 		};
 	}
+
+	canvas.onmouseout=function(){
+		mouseDown = false;
+		lastPos = 0;
+	};
+
+	canvas.onselectstart = function () { return false; } // ie
+	canvas.onmousedown = function () { return false; } // mozilla
 
 	// Prevent scrolling when touching the canvas
 	document.body.addEventListener("touchstart", function (e) {
