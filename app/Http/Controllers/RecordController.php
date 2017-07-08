@@ -16,6 +16,18 @@ class RecordController extends Controller
     public function index()
     {
 		$records = Record::all();
+		// lets sort this array before sending it
+		$records = $records->sort(function($a, $b)
+		{
+		    $a = ($a->upvotes) - ($a->downvotes);
+		    $b = ($b->upvotes) - ($b->downvotes);
+		    //here you can do more complex comparisons
+		    //when dealing with sub-objects and child models
+		    if ($a === $b) {
+		        return 0;
+		    }
+		    return ($a < $b) ? 1 : -1;
+		});
 
 		return view('records.create', compact('records'));
     }
