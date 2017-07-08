@@ -210,5 +210,19 @@
 		}
 	}, false);
 
+	function resize(){
+		canvas = document.getElementById('beard-creator');
+
+		console.log(window.innerWidth);
+		ctx = canvas.getContext("2d");
+
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		ctx.globalCompositeOperation="source-over";
+		ctx.drawImage(beard,0,0);
+	}
+
+	window.addEventListener("resize", resize);
+
 	</script>
 @endsection
