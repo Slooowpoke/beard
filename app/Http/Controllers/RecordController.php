@@ -85,6 +85,11 @@ class RecordController extends Controller
 		return view('records.show', compact('record'));
     }
 
+	public function get(Request $request){
+		$record = Record::find($request->id);
+		return $record;
+	}
+
     /**
      * Update the specified record in storage.
      *
