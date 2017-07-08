@@ -8368,7 +8368,7 @@ body h1,
 body h2,
 body h3,
 body h4 {
-  font-family: 'Rye', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   color: #ddd;
 }
 
@@ -8380,5 +8380,137 @@ body section {
 body .title {
   margin-top: 10%;
   margin-bottom: 10%;
+}
+
+body header {
+  margin-top: 40px;
+}
+
+body header img {
+  text-align: center;
+  margin: 0 auto;
+}
+
+body .creator {
+  text-align: center;
+}
+
+body .creator .editor {
+  background-color: #fefbec;
+  max-width: 709px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-offset: -12px;
+  outline-color: rgba(51, 51, 51, 0.34);
+  border-radius: 6px;
+}
+
+body .creator .editor canvas {
+  cursor: url("/imgs/shaver.png"), auto;
+}
+
+body .creator .editor #brush-label {
+  color: #464646;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Work Sans";
+  font-size: 12px;
+}
+
+body button#save {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #fefbec;
+  color: #464646;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: 1px solid #563b5e;
+  font-family: "Work Sans";
+  border-radius: 3px;
+}
+
+body input#slider {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+body section.show .face {
+  background-color: #fefbec;
+  padding: 0px;
+  margin: 0 auto;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  max-width: 500px;
+}
+
+body section.show .face .upvote,
+body section.show .face .downvote {
+  width: 50%;
+  padding: 10px;
+  background-color: #fefbec;
+  color: #464646;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(86, 59, 94, 0.24);
+  font-family: "Work Sans";
+  border-radius: 3px;
+  font-size: 10px;
+}
+
+body section.show .face .upvote {
+  float: left;
+}
+
+body section.show .face .downvote {
+  float: right;
+}
+
+body section.show .face a {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 38px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #df5646;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Work Sans";
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+}
+
+body section.show .face .next,
+body section.show .face .prev {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+body section.show .face .next {
+  width: 50%;
+  margin-right: 0;
+  float: right;
+  background-color: #dadce2;
+  color: #464646;
+}
+
+body section.show .face .prev {
+  width: 50%;
+  margin-left: 0;
+  float: left;
 }
 
