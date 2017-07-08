@@ -5,13 +5,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<img id="beard" src="imgs/beard.png" style="display:none;">
+					<div class="editor">
+						<button id="save" onclick="reset()">Reset</button>
+						<img id="beard" src="imgs/beard.png" style="display:none;">
 
-					<canvas id="beard-creator" style="background-image:url('imgs/base.png')"></canvas>
+						<canvas id="beard-creator" style="background-image:url('imgs/base.png')"></canvas>
 
-					<p>Brush size</p>
-					<input id="slider" type="range" min="0" max="20" step="1" onchange="changeBrushSize(this.value)"/>
-					<button onclick="save()">Save</button>
+						<p id="brush-label">BRUSH SIZE: 10</p>
+						<input id="slider" type="range" min="0" max="20" step="1" onchange="changeBrushSize(this.value)"/>
+						<button id="save" onclick="save()">Save</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -21,12 +24,17 @@
 		<div class="container">
 			<div class="row">
 				@foreach ($records as $record)
-					<div class="col-xs-12 col-sm-4">
-						<img class="img-responsive" src="{{ $record->data }}" style="background-image:url('imgs/base.png'); background-size:contain">
-						<button onclick="upvote({{ $record->id }})">Upvote</button>
-						<button onclick="downvote({{ $record->id }})">Downvote</button>
-						<a href="/{{ $record->id }}">View</a>
+					<div class="col-xs-12 col-sm-3">
+						<div class="face">
+							<img class="img-responsive" src="{{ $record->data }}" style="background-image:url('imgs/base.png'); background-size:contain">
+
+							<button class="upvote" onclick="upvote({{ $record->id }})">Upvote</button>
+							<button class="downvote" onclick="downvote({{ $record->id }})">Downvote</button>
+							<a href="/show/{{ $record->id }}">VIEW</a>
+						</div>
+
 					</div>
+
 				@endforeach
 			</div>
 		</div>
@@ -44,8 +52,14 @@
 	var beard = document.getElementById("beard");
 	var size = 10;
 
+	function reset(){
+		// cba
+		location.reload();
+	}
+
 	function changeBrushSize(v) {
 		size = v;
+		document.getElementById("brush-label").innerHTML = "BRUSH SIZE: " + size;
 	}
 
 	var loadImage = function (url, ctx) {
@@ -63,6 +77,7 @@
 		})
 		.then(function (response) {
 			console.log(response);
+			location.reload();
 		})
 		.catch(function (error) {
 			console.log(error);
