@@ -45,4 +45,81 @@ body{
 
 
 
+	section.show{
+
+		.face{
+			background-color: #fefbec;
+		    padding: 0px;
+			margin: 0 auto;
+		    border-radius: 3px;
+		    margin-top: 20px;
+		    margin-bottom: 10px;
+		    max-width: 500px;
+
+
+
+			.upvote, .downvote{
+				width: 50%;
+				padding: 10px;
+				background-color: #fefbec;
+				color: #464646;
+				text-transform: uppercase;
+				font-weight: bold;
+			    border: 1px solid rgba(86, 59, 94, 0.24);
+				font-family: "Work Sans";
+				border-radius: 3px;
+				font-size: 10px;
+			}
+
+			.upvote{
+				float:left;
+			}
+
+			.downvote{
+				float:right;
+			}
+
+			a{
+				width: 100%;
+				margin: 0 auto;
+				display: block;
+				margin-top: 38px;
+				margin-bottom: 20px;
+				padding: 10px;
+				background-color: #df5646;
+				color: white;
+				text-transform: uppercase;
+				font-family: "Work Sans";
+				letter-spacing: 1px;
+				font-weight: bold;
+				font-size: 12px;
+				text-align: center;
+			}
+
+
+			.next, .prev{
+				display: inline-block;
+				margin-top:10px;
+			}
+
+			.next{
+				width:50%;
+				margin-right:0;
+				float:right;
+				background-color: #dadce2;
+    			color: #464646;
+			}
+
+			.prev{
+				width:50%;
+				margin-left:0;
+				float:left;
+			}
+
+		}
+
+	}
+
+
+
 }
